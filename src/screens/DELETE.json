@@ -1,0 +1,150 @@
+{
+    "data": {
+        "coord": {
+            "lon": 80.2785,
+            "lat": 13.0878
+        },
+        "weather": [
+            {
+                "id": 211,
+                "main": "Thunderstorm",
+                "description": "thunderstorm",
+                "icon": "11d"
+            }
+        ],
+        "base": "stations",
+        "main": {
+            "temp": 302.14,
+            "feels_like": 306.62,
+            "temp_min": 302.14,
+            "temp_max": 302.14,
+            "pressure": 1002,
+            "humidity": 74
+        },
+        "visibility": 2000,
+        "wind": {
+            "speed": 5.66,
+            "deg": 180
+        },
+        "clouds": {
+            "all": 75
+        },
+        "dt": 1634120559,
+        "sys": {
+            "type": 1,
+            "id": 9218,
+            "country": "IN",
+            "sunrise": 1634084929,
+            "sunset": 1634127670
+        },
+        "timezone": 19800,
+        "id": 1264527,
+        "name": "Chennai",
+        "cod": 200
+    },
+    "status": 200,
+    "headers": {
+        "x-cache-key": "/data/2.5/weather?q=chennai",
+        "connection": "keep-alive",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Wed, 13 Oct 2021 10:26:20 GMT",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-origin": "*",
+        "content-length": "479",
+        "access-control-allow-methods": "GET, POST",
+        "server": "openresty"
+    },
+    "config": {
+        "transitional": {
+            "silentJSONParsing": true,
+            "forcedJSONParsing": true,
+            "clarifyTimeoutError": false
+        },
+        "transformRequest": [
+            null
+        ],
+        "transformResponse": [
+            null
+        ],
+        "timeout": 0,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "maxBodyLength": -1,
+        "headers": {
+            "Accept": "application/json, text/plain, */*"
+        },
+        "method": "get",
+        "url": "https://api.openweathermap.org/data/2.5/weather?appid=db491f9f0dfb55cdb86258343297df7d&q=Chennai"
+    },
+    "request": {
+        "UNSENT": 0,
+        "OPENED": 1,
+        "HEADERS_RECEIVED": 2,
+        "LOADING": 3,
+        "DONE": 4,
+        "readyState": 4,
+        "status": 200,
+        "timeout": 0,
+        "withCredentials": true,
+        "upload": {},
+        "_aborted": false,
+        "_hasError": false,
+        "_method": "GET",
+        "_perfKey": "network_XMLHttpRequest_https://api.openweathermap.org/data/2.5/weather?appid=db491f9f0dfb55cdb86258343297df7d&q=Chennai",
+        "_response": "{\"coord\":{\"lon\":80.2785,\"lat\":13.0878},\"weather\":[{\"id\":211,\"main\":\"Thunderstorm\",\"description\":\"thunderstorm\",\"icon\":\"11d\"}],\"base\":\"stations\",\"main\":{\"temp\":302.14,\"feels_like\":306.62,\"temp_min\":302.14,\"temp_max\":302.14,\"pressure\":1002,\"humidity\":74},\"visibility\":2000,\"wind\":{\"speed\":5.66,\"deg\":180},\"clouds\":{\"all\":75},\"dt\":1634120559,\"sys\":{\"type\":1,\"id\":9218,\"country\":\"IN\",\"sunrise\":1634084929,\"sunset\":1634127670},\"timezone\":19800,\"id\":1264527,\"name\":\"Chennai\",\"cod\":200}",
+        "_url": "https://api.openweathermap.org/data/2.5/weather?appid=db491f9f0dfb55cdb86258343297df7d&q=Chennai",
+        "_timedOut": false,
+        "_trackingName": "unknown",
+        "_incrementalEvents": false,
+        "_performanceLogger": {
+            "_timespans": {
+                "network_XMLHttpRequest_https://api.openweathermap.org/data/2.5/weather?appid=db491f9f0dfb55cdb86258343297df7d&q=Chennai": {
+                    "startTime": 39765061.18222,
+                    "endTime": 39765494.95872,
+                    "totalTime": 433.7765000015497
+                },
+                "network_XMLHttpRequest_http://10.0.2.2:8081/symbolicate": {
+                    "startTime": 39765158.06532
+                }
+            },
+            "_extras": {},
+            "_points": {
+                "initializeCore_start": 39756772.00032,
+                "initializeCore_end": 39756859.11072
+            },
+            "_pointExtras": {},
+            "_closed": false
+        },
+        "responseHeaders": {
+            "X-Cache-Key": "/data/2.5/weather?q=chennai",
+            "Connection": "keep-alive",
+            "Content-Type": "application/json; charset=utf-8",
+            "Date": "Wed, 13 Oct 2021 10:26:20 GMT",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Origin": "*",
+            "Content-Length": "479",
+            "Access-Control-Allow-Methods": "GET, POST",
+            "Server": "openresty"
+        },
+        "_requestId": null,
+        "_headers": {
+            "accept": "application/json, text/plain, */*"
+        },
+        "_responseType": "",
+        "_sent": true,
+        "_lowerCaseResponseHeaders": {
+            "x-cache-key": "/data/2.5/weather?q=chennai",
+            "connection": "keep-alive",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Wed, 13 Oct 2021 10:26:20 GMT",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "*",
+            "content-length": "479",
+            "access-control-allow-methods": "GET, POST",
+            "server": "openresty"
+        },
+        "_subscriptions": [],
+        "responseURL": "https://api.openweathermap.org/data/2.5/weather?appid=db491f9f0dfb55cdb86258343297df7d&q=Chennai"
+    }
+}

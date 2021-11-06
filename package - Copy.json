@@ -1,0 +1,70 @@
+{
+  "name": "@benestudioco/react-native-boilerplate",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "dev:ios": "run-p start ios",
+    "dev:android": "run-p start android",
+    "dev": "run-p start ios android",
+    "test": "jest",
+    "lint": "eslint src/ --ext .js,.ts,.tsx",
+    "lint:fix": "eslint src/ --fix --ext .js,.ts,.tsx",
+    "typecheck": "tsc --noEmit -p .",
+    "stage-files": "git add ."
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "expo": "~40.0.0",
+    "expo-status-bar": "~1.0.3",
+    "@expo/vector-icons": "^12.0.5",
+    "expo-asset": "^8.3.3",
+    "expo-constants": "^11.0.1",
+    "expo-font": "^9.2.1",
+    "react": "17.0.1",
+    "react-native": "0.64.0",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-safe-area-view": "^1.1.1",
+    "react-navigation": "^4.4.4",
+    "react-navigation-stack": "^2.10.4",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@benestudioco/commitlint-config": "^1.0.0",
+    "@benestudioco/eslint-config-benestudio": "^0.1.4",
+    "@commitlint/cli": "^12.1.1",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^26.0.20",
+    "@types/react-native": "^0.64.0",
+    "@types/react-test-renderer": "^16.9.2",
+    "@types/styled-components": "^5.1.9",
+    "@types/styled-components-react-native": "^5.1.1",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.14.0",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.64.0",
+    "npm-run-all": "^4.1.5",
+    "react-test-renderer": "17.0.1",
+    "typescript": "^3.8.3"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
