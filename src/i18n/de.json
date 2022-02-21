@@ -1,0 +1,16 @@
+{
+  "translation": {
+    "index_screen": {
+      "title": "Poda App",
+      "part2": "Learn React"
+    },
+    "show_screen": {
+      "title": "Weather Info for ",
+      "part2": "Learn React"
+    },
+    "create_screen": {
+      "title": "New City",
+      "part2": "Learn React"
+    }
+  }
+}

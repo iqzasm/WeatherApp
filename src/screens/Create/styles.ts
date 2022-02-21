@@ -4,7 +4,7 @@ export default StyleSheet.create({
   input: {
     fontSize: 18,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: 'maroon',
     marginBottom: 15,
     padding: 5,
     margin: 5,
@@ -29,5 +29,8 @@ export default StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 5,
     margin: 2,
+  },
+  button: {
+    color: 'maroon',
   },
 });

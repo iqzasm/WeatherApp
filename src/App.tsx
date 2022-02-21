@@ -1,8 +1,9 @@
+import './i18n';
+
+import App from './routes';
+import { Provider } from 'react-redux';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
-import { Provider } from 'react-redux';
-import App from './routes';
 import { store } from './store';
 
 export default () => (

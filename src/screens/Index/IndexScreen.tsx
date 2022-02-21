@@ -90,8 +90,9 @@ const IndexScreen = ({ navigation }: IndexScreenProps) => {
             console.log('Create button');
             navigation.navigate('Create');
           }}
+          style={styles.navButton}
         >
-          <Icon color="white" name="plus" size={30} />
+          <Icon color="white" name="plus" size={23} />
         </TouchableOpacity>
       ),
     });

@@ -1,0 +1,16 @@
+{
+  "translation": {
+    "index_screen": {
+      "title": "Weather App"
+    },
+    "show_screen": {
+      "title": "Weather Info for "
+    },
+    "create_screen": {
+      "title": "New City",
+      "label_enter_city": "Enter city:",
+      "placeholder_enter_city": "Enter a city name",
+      "btn_add_city": "Add City"
+    }
+  }
+}
