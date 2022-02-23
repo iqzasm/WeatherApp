@@ -1,4 +1,4 @@
-import { ActionType, IWeatherData } from '../action-types';
+import { ActionType, ICity, IWeatherData } from '../action-types';
 
 interface AddCityAction {
   type: ActionType.ADD_CITY;
@@ -9,12 +9,24 @@ interface SetCitiesAction {
   type: ActionType.SET_CITIES;
   payload: string[];
 }
+interface SetAllCitiesAction {
+  type: ActionType.SET_ALL_CITIES;
+  payload: ICity[];
+}
 interface SetCitiesToStorageAction {
   type: ActionType.SET_CITIES_TO_STORAGE;
   payload: string[];
 }
 interface GetCitiesFromStorageAction {
   type: ActionType.GET_CITIES_FROM_STORAGE;
+  payload: undefined;
+}
+interface SetAllCitiesToStorageAction {
+  type: ActionType.SET_ALL_CITIES_TO_STORAGE;
+  payload: string[];
+}
+interface GetAllCitiesFromStorageAction {
+  type: ActionType.GET_ALL_CITIES_FROM_STORAGE;
   payload: undefined;
 }
 
@@ -46,8 +58,11 @@ interface SetErrorAction {
 export type Action =
   | AddCityAction
   | SetCitiesAction
+  | SetAllCitiesAction
   | SetCitiesToStorageAction
   | GetCitiesFromStorageAction
+  | SetAllCitiesToStorageAction
+  | GetAllCitiesFromStorageAction
   | DeleteCityAction
   | RefreshCityAction
   | FetchCityAction
@@ -64,6 +79,11 @@ export const setCities = (payload: string[]): SetCitiesAction => ({
   payload,
 });
 
+export const setAllCities = (payload: ICity[]): SetAllCitiesAction => ({
+  type: ActionType.SET_ALL_CITIES,
+  payload,
+});
+
 export const setCitiesToStorage = (
   payload: string[]
 ): SetCitiesToStorageAction => ({
@@ -73,6 +93,12 @@ export const setCitiesToStorage = (
 
 export const getCitiesFromStorage = (): GetCitiesFromStorageAction => ({
   type: ActionType.GET_CITIES_FROM_STORAGE,
+  payload: undefined,
+});
+
+export const getAllCitiesFromStorage = (): GetAllCitiesFromStorageAction => ({
+  type: ActionType.GET_ALL_CITIES_FROM_STORAGE,
+  payload: undefined,
 });
 
 export const deleteCity = (payload: string): DeleteCityAction => ({

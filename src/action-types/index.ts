@@ -1,8 +1,11 @@
 export enum ActionType {
   ADD_CITY = 'ADD_CITY',
   SET_CITIES = 'SET_CITIES',
+  SET_ALL_CITIES = 'SET_ALL_CITIES',
   SET_CITIES_TO_STORAGE = 'SET_CITIES_TO_STORAGE',
   GET_CITIES_FROM_STORAGE = 'GET_CITIES_FROM_STORAGE',
+  SET_ALL_CITIES_TO_STORAGE = 'SET_ALL_CITIES_TO_STORAGE',
+  GET_ALL_CITIES_FROM_STORAGE = 'GET_ALL_CITIES_FROM_STORAGE',
   DELETE_CITY = 'DELETE_CITY',
   REFRESH_CITY_WEATHER = 'REFRESH_CITY_WEATHER',
   FETCH_CITY_WEATHER = 'FETCH_CITY_WEATHER',
@@ -45,4 +48,13 @@ export interface IWeatherAPIResponse {
       sunset: number;
     };
   };
+}
+
+export interface ICitiesAPIResponse {
+  data: [{ cities: string[] }];
+}
+
+export interface ICity {
+  id: number;
+  title: string;
 }

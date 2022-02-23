@@ -9,58 +9,74 @@ import {
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 
-import { addCity } from '../../actions';
+import { addCity, getAllCitiesFromStorage, setError } from '../../actions';
 import { Formik } from 'formik';
 import { globalStyles } from '../../styles/global';
 import { NavigationStackProp } from 'react-navigation-stack';
 import styles from './styles';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Card } from 'react-native-elements';
+import { ICity } from '../../action-types';
+import { IApplicationState } from '../../reducers';
 
 interface CreateScreenProps {
   navigation: NavigationStackProp;
-}
-
-interface City {
-  id: number;
-  title: string;
 }
 
 export default ({ navigation }: CreateScreenProps) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
+  const cities: ICity[] = useSelector<IApplicationState>(
+    state => state.allCities
+  );
+
   // For Main Data
-  const [allCitiesState, setAllCitiesState] = useState<City[]>([]);
+  const [allCitiesState, setAllCitiesState] = useState<ICity[]>([]);
   // For Filtered Data
-  const [filteredCitiesState, setFilteredCitiesState] = useState<City[]>([]);
+  const [filteredCitiesState, setFilteredCitiesState] = useState<ICity[]>([]);
+
+  // useEffect(() => {
+  //   fetch('https://countriesnow.space/api/v0.1/countries')
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       const allCities = json.data
+  //         .reduce((result: string[], { cities }: { cities: string[] }) => {
+  //           return result.concat(cities);
+  //         }, [])
+  //         .map((city: string, index: number) => ({ id: index, title: city }));
+
+  //       setAllCitiesState(allCities);
+
+  //       console.log(`citiesList.length:::${allCities.length}`);
+
+  //       console.log(
+  //         `citiesList.title:::${allCities[allCities.length - 1].title}`
+  //       );
+  //     })
+  //     .catch(e => {
+  //       console.error(e);
+  //     });
+  // }, []);
+
+  const getAllCitiesFromStorageCB = React.useCallback(() => {
+    try {
+      dispatch(getAllCitiesFromStorage());
+    } catch (e) {
+      if (e instanceof Error) {
+        console.log(e);
+        dispatch(setError(e));
+      }
+    }
+  }, [dispatch]);
 
   useEffect(() => {
-    fetch('https://countriesnow.space/api/v0.1/countries')
-      .then(res => res.json())
-      .then(json => {
-        const allCities = json.data
-          .reduce((result: string[], { cities }: { cities: string[] }) => {
-            return result.concat(cities);
-          }, [])
-          .map((city: string, index: number) => ({ id: index, title: city }));
-
-        setAllCitiesState(allCities);
-
-        console.log(`citiesList.length:::${allCities.length}`);
-
-        console.log(
-          `citiesList.title:::${allCities[allCities.length - 1].title}`
-        );
-      })
-      .catch(e => {
-        console.error(e);
-      });
-  }, []);
+    getAllCitiesFromStorageCB();
+  }, [getAllCitiesFromStorageCB]);
 
   const filterCities = (text: string) => {
-    const filteredCities = allCitiesState.filter((city: City) =>
+    const filteredCities = cities.filter((city: ICity) =>
       city.title.startsWith(text)
     );
 

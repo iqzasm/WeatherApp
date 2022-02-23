@@ -5,7 +5,7 @@
     "url": "https://api.openweathermap.org/data/2.5/weather?appid=db491f9f0dfb55cdb86258343297df7d&units=metric",
     "iconUrl": "http://openweathermap.org/img/w/ICONCODE.png"
   },
-  "android": {
-    "package": "com.benestudio.iws.weather"
+  "cities_api": {
+    "url": "https://countriesnow.space/api/v0.1/countries"
   }
 }
