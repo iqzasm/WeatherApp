@@ -53,9 +53,12 @@ interface IndexScreenProps {
 }
 
 const IndexScreen = ({ navigation }: IndexScreenProps) => {
-  const cities: string[] = useSelector<IApplicationState>(
-    state => state.cities
-  );
+  const { cities } = useSelector<
+    IApplicationState,
+    Pick<IApplicationState, 'cities'>
+  >(state => ({
+    cities: state.cities,
+  }));
 
   const dispatch = useDispatch();
 

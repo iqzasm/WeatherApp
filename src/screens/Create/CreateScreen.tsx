@@ -32,33 +32,8 @@ export default ({ navigation }: CreateScreenProps) => {
     state => state.allCities
   );
 
-  // For Main Data
-  const [allCitiesState, setAllCitiesState] = useState<ICity[]>([]);
   // For Filtered Data
   const [filteredCitiesState, setFilteredCitiesState] = useState<ICity[]>([]);
-
-  // useEffect(() => {
-  //   fetch('https://countriesnow.space/api/v0.1/countries')
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       const allCities = json.data
-  //         .reduce((result: string[], { cities }: { cities: string[] }) => {
-  //           return result.concat(cities);
-  //         }, [])
-  //         .map((city: string, index: number) => ({ id: index, title: city }));
-
-  //       setAllCitiesState(allCities);
-
-  //       console.log(`citiesList.length:::${allCities.length}`);
-
-  //       console.log(
-  //         `citiesList.title:::${allCities[allCities.length - 1].title}`
-  //       );
-  //     })
-  //     .catch(e => {
-  //       console.error(e);
-  //     });
-  // }, []);
 
   const getAllCitiesFromStorageCB = React.useCallback(() => {
     try {
@@ -108,7 +83,6 @@ export default ({ navigation }: CreateScreenProps) => {
                   props.handleChange('city')(text);
                   filterCities(text);
                 }}
-                // onChangeText={props.handleChange('city')}
                 placeholder={t('create_screen.placeholder_enter_city')}
                 style={globalStyles.input}
                 value={props.values.city}
