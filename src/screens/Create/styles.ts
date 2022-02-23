@@ -20,6 +20,10 @@ export default StyleSheet.create({
     padding: 16,
     marginTop: 40,
   },
+  cardStyle: {
+    margin: 2,
+    padding: 12,
+  },
   autocompleteContainer: {
     backgroundColor: '#ffffff',
     borderWidth: 0,
